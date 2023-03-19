@@ -1,0 +1,332 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+input,p,a,label,button{
+    font-family: 'Montserrat', sans-serif;
+}
+.contact input{
+    width: 100%;
+}
+.faq-main{
+    width: 80%;
+    margin: 30px auto;
+}
+.faq-main .ant-collapse.ant-collapse-icon-position-start.css-dev-only-do-not-override-1me4733{
+    background-color: #f0f0f0;
+    border: 1px solid #f0f0f0;
+    border-bottom: 0;
+    border-radius: 0px;
+    margin-bottom: 20px;
+}
+.offer-counter {
+    background: #e7c8b2;
+    padding: 5px 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.offer-counter span{
+    font-size: 14px;
+    padding: unset;
+}
+.offer-counter span.ant-tag.css-dev-only-do-not-override-1me4733 {
+    width: 70%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none !important;
+    background-color: transparent !important;
+}
+.offer-counter span.anticon.anticon-close.ant-tag-close-icon {
+    font-size: 14px;
+}
+.offer-counter button,.ant-btn{
+    margin-left: 10px;
+    background-color: #cc9756 !important;
+    border: 1px solid #fff;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 0px !important;
+}
+.offer-counter button:hover{
+    background-color: #cc9756 !important;
+    border: 1px solid #fff !important;
+    color: #fff !important;
+}
+ul li{
+    list-style-type: none;
+}
+/* header */
+header{
+    padding:10px;
+}
+header ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* header ul li {
+    margin-left: 20px;
+}
+*/
+header ul li a{
+    color: #000 !important;
+    font-size: 16px;
+}
+header ul li a:hover{
+    color: #cc9756 !important;
+}
+header.mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+.mobile-header ul li {
+    margin-left: unset !important;
+}
+.navmob ul li{
+    margin-left: 10px !important;
+}
+.navmob h1{
+    color: #000;
+}
+.desktop-menu ul li {
+    margin-left: 30px;
+}
+/* About */
+.aboutSide{
+    padding: 30px;
+}
+.right{
+    padding-left: 30px;
+}
+.right ul{
+    padding: unset !important;
+}
+.right ul li{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom:1px solid #cc9756;
+}
+.mainAbout,.contact{
+    padding: 40px;
+}
+.aboutSide h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+}
+.aboutSide p{
+    font-size: 16px;
+}
+.styleText{
+    font-family: 'Montez', cursive;
+    font-size: 40px;
+    color: #556381;
+}
+/* slider */
+.slider-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden 
+}
+.slider-img img{
+    object-fit: cover;
+    width: 1500px !important;
+    height: 600px !important;
+}
+/* banner */
+.banner{
+    padding: 10px;
+    margin: 50px 20px 0px 20px;
+    overflow: hidden;
+    border: 5px solid #f0f0f0;
+}
+.banner img{
+    width: 100%;
+    border-radius: 0px !important;
+    transition: .5s ease-in-out;
+    height: 300px;
+    cursor: pointer;
+    object-fit: cover;
+}
+.banner:hover img{
+    transform: scale(1.1);
+    transition: .5s ease-in-out;
+}
+/* productTabs */
+.productTabs{
+    text-align: center;
+    padding: 40px;
+}
+.Ptabs{
+    width: 80%;
+    margin: 30px auto;
+}
+.productTabs p{
+    font-size:16px ;
+    line-height: 10px;
+}
+.productTabs h1{
+    font-size: 40px;
+    font-weight: 600;
+}
+.ant-tabs-nav-wrap{
+    justify-content: center;
+}
+.ant-tabs-tab {
+    width: 100px;
+    text-align: center;
+    justify-content: center;
+   /* background-color: #f0f0f0 !important;
+    */
+    border-radius: 30px;
+    color: #000;
+}
+.ant-tabs-tab-btn {
+    color: #000 !important;
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+    color: #fff !important;
+}
+.ant-tabs-tab.ant-tabs-tab-active{
+    color: #fff !important;
+    background-color: #cc9756 !important;
+}
+.whyChoose{
+    background-color: #f7f7f7;
+    padding: 40px;
+}
+.whyChoose h2{
+    font-size: 32px;
+    text-align: center;
+    font-weight: 600;
+}
+.WhyCards h3{
+    font-size: 18px;
+    color: #cc9756;
+    font-family: 'Montserrat', sans-serif;
+}
+.WhyCards .card{
+    margin-bottom: 40px;
+}
+/* team */
+.OurTeam{
+    background-color: transparent;
+}
+.team-card h4{
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+.form .form-container{
+    background-color: #f3f3f3;
+    border: none;
+    padding: 30px;
+}
+.form .form-header{
+    text-align: center;
+    line-height: 10px;
+}
+.form .form-header h2{
+    font-weight: 600;
+    font-size: 28px;
+}
+.form input{
+    background-color: #fff;
+    border: none;
+}
+.form button{
+    width: 30%;
+    background-color: #cc9756;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+.cart button{
+    width: 30%;
+    background-color: #ff1316;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    padding: 10px;
+    font-weight: 700;
+}
+.cart-action {
+    padding: 10px;
+}
+.form p,.empty p,.cart p{
+    font-size: 14px;
+}
+.buttonProceed{
+    text-align: right;
+}
+.empty {
+    padding: 10px;
+    background-color: #cc9756;
+    color: #fff;
+}
+.empty span{
+    color: #fff;
+    font-weight: 600;
+    margin-left: 5px;
+}
+.cart{
+    width: 80%;
+    margin: 0 auto;
+}
+.cart h3{
+    font-size: 28px;
+    font-weight: 600;
+}
+.dropdown{
+    position: relative;
+}
+.histroy{
+    padding: 40px;
+}
+.dropdown-content {
+    position: absolute;
+}
+.bothAdmin{
+    display: flex;
+}
+.drop{
+    margin-left: 10px;
+}
+.ant-popover-inner-content ul{
+    padding: unset !important;
+}
+.ant-popover-inner-content ul li a{
+    color: #000 !important;
+    cursor: pointer;
+}
+.mobile-header{
+    display: none !important;
+}
+@media screen and (max-width:767px) {
+    .desktop-menu{
+        display: none;
+   }
+    .mobile-header{
+        display: flex !important;
+   }
+}
+@media screen and (max-width:600px) {
+    .slider-img img{
+        object-fit: contain;
+        width: 600px !important;
+   }
+    .ant-row.css-dev-only-do-not-override-1me4733 {
+        display: block;
+   }
+    .right{
+        padding: unset;
+   }
+}

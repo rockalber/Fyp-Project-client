@@ -1,18 +1,12 @@
 import express from 'express';
-
 import path from 'path';
-
 import mongoose from 'mongoose';
-
 import bodyParser from 'body-parser';
-
 import config from './config.js';
-
 import orderRouter from './routes/orderRoute.js';
+import userRouter from './routes/userRoute.js';
 import productRouter from './routes/productRoute.js';
 import uploadRouter from './routes/uploadRoute.js';
-import userRouter from './routes/userRoute.js';
-import cors from 'cors'
 const mongodbUrl = config.MONGODB_URL;
 mongoose
   .connect(mongodbUrl, {
@@ -23,12 +17,6 @@ mongoose
   .catch((error) => console.log(error));
 
 const app = express();
-var corsOptions = {
-  origin: "https://shoes-point.herokuapp.com"
-  // origin: 'http://localhost:3000'
-};
-
-app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());

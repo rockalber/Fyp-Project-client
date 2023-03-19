@@ -1,0 +1,56 @@
+
+.tabsmenu{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.btn-group__item {
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    border: 1px solid #000;
+    transition: all .3s ease-out;
+    text-transform: capitalize;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.btn-group__item:hover,.btn-group__item:focus {
+    color: #fff;
+    border: 1px solid #ff1316;
+    background-color: #ff1316;
+}
+
+.btn-group__item:focus {
+    outline: none
+}
+
+.btn-group__item--active:after {
+    opacity: 1;
+    transform: translatey(-2px)
+}
+.category{
+    padding: 5px ;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 20px;
+    background-color: #c29958;
+    width: 60px;
+    color: #fff;
+    font-weight: bold;
+}
+@media screen and (max-width: 600px) {
+    .card {
+        margin:0 auto;
+        width: 100%;
+        display: block
+    }
+}

@@ -17,7 +17,6 @@ import {
   } from '../constants/productConstants';
   import axios from 'axios';
   import Axios from 'axios';
-import { url } from './BackendUrl';
   
   const listProducts = (
     category = '',
@@ -27,7 +26,7 @@ import { url } from './BackendUrl';
     try {
       dispatch({ type: PRODUCT_LIST_REQUEST });
       const { data } = await axios.get(
-        `${url}/api/products?category=` +
+        '/api/products?category=' +
           category +
           '&searchKeyword=' +
           searchKeyword +
@@ -47,7 +46,7 @@ import { url } from './BackendUrl';
         userSignin: { userInfo },
       } = getState();
       if (!product._id) {
-        const { data } = await Axios.post(`${url}/api/products`, product, {
+        const { data } = await Axios.post('/api/products', product, {
           headers: {
             Authorization: 'Bearer ' + userInfo.token,
           },
@@ -55,7 +54,7 @@ import { url } from './BackendUrl';
         dispatch({ type: PRODUCT_SAVE_SUCCESS, payload: data });
       } else {
         const { data } = await Axios.put(
-          `${url}/api/products/${product._id}`,
+          '/api/products/' + product._id,
           product,
           {
             headers: {
@@ -73,7 +72,7 @@ import { url } from './BackendUrl';
   const detailsProduct = (productId) => async (dispatch) => {
     try {
       dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: productId });
-      const { data } = await axios.get(`${url}/api/products/${productId}`);
+      const { data } = await axios.get('/api/products/' + productId);
       dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
     } catch (error) {
       dispatch({ type: PRODUCT_DETAILS_FAIL, payload: error.message });
@@ -86,7 +85,7 @@ import { url } from './BackendUrl';
         userSignin: { userInfo },
       } = getState();
       dispatch({ type: PRODUCT_DELETE_REQUEST, payload: productId });
-      const { data } = await axios.delete(`${url}/api/products/${productId}`, {
+      const { data } = await axios.delete('/api/products/' + productId, {
         headers: {
           Authorization: 'Bearer ' + userInfo.token,
         },
@@ -109,7 +108,7 @@ import { url } from './BackendUrl';
       } = getState();
       dispatch({ type: PRODUCT_REVIEW_SAVE_REQUEST, payload: review });
       const { data } = await axios.post(
-        `${url}/api/products/${productId}/reviews`,
+        `/api/products/${productId}/reviews`,
         review,
         {
           headers: {

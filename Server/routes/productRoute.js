@@ -2,6 +2,7 @@ import express from 'express';
 import Product from '../models/productModel.js';
 import { isAuth, isAdmin } from '../util.js';
 import expressAsyncHandler from 'express-async-handler';
+import SearchProductModel from '../models/recomendedProductModel.js';
 
 const productRouter = express.Router();
 
@@ -23,6 +24,16 @@ productRouter.get('/', expressAsyncHandler(async (req, res) => {
   const products = await Product.find({ ...category, ...searchKeyword }).sort(
     sortOrder
   );
+  if (req.query.searchKeyword) {
+
+    let create = new SearchProductModel({
+      text: req.query.searchKeyword,
+      products: products.map(e=>e._id)
+    })
+    await create.save()
+
+  }
+
   res.send(products);
 }));
 
@@ -34,6 +45,7 @@ productRouter.get('/:id', expressAsyncHandler(async (req, res) => {
     res.status(404).send({ message: 'Product Not Found.' });
   }
 }));
+
 productRouter.post(
   '/:id/reviews',
   isAuth,
@@ -60,6 +72,7 @@ productRouter.post(
     }
   })
 );
+
 productRouter.put('/:id', isAuth, isAdmin, expressAsyncHandler(async (req, res) => {
   const productId = req.params.id;
   const product = await Product.findById(productId);
@@ -111,6 +124,7 @@ productRouter.post('/',isAuth, isAdmin, expressAsyncHandler(async (req, res) => 
   }
   return res.status(500).send({ message: ' Error in Creating Product.' });
 }));
+
 productRouter.post(
   '/',
   isAuth,
@@ -131,4 +145,16 @@ productRouter.post(
     res.send({ message: 'Product Created', product: createdProduct });
   })
 );
+
+productRouter.post('/search-products', expressAsyncHandler(async (req, res) => {
+  console.log('product=========')
+  const product = await SearchProductModel.find({}).populate('products');
+  console.log('product=========', product)
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).send({ message: 'Product Not Found.' });
+  }
+}));
+
 export default productRouter;

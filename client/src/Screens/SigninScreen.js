@@ -31,29 +31,28 @@ function SigninScreen(props) {
     <form onSubmit={submitHandler} >
       <ul className="form-container">
         <li>
-          <h2>Sign-In</h2>
+         <div className='form-header'>
+         <h2>Login</h2>
+          <p>Please login using account detail bellow.</p>
+         </div>
         </li>
         <li>
           {loading && <LoadingBox></LoadingBox>}
           {error && <MessageBox variant="danger">{error}</MessageBox>}
         </li>
         <li>
-          <label htmlFor="email">
-            Email
-          </label>
           <input type="email" name="email" required id="email" placeholder="Enter email.." onChange={(e) => setEmail(e.target.value)}>
           </input>
         </li>
         <li>
-          <label htmlFor="password">Password</label>
           <input type="password" id="password" required name="password" placeholder="Enter Password.." onChange={(e) => setPassword(e.target.value)}>
           </input>
         </li>
         <li>
-          <button type="submit" className="button primary">Signin</button>
+          <button type="submit" className="button ">Signin</button>
         </li>
         <div>
-        New customer?{' '} <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} >Create your Account</Link>
+       <p>  <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} >Create account</Link></p>
         </div>
       </ul>
     </form>

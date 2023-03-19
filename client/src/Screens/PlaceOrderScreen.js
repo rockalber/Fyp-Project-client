@@ -7,7 +7,6 @@ import { ORDER_CREATE_RESET } from '../constants/orderConstants';
 import LoadingBox from "../component/LoadingBox";
 import MessageBox from "../component/MessageBox";
 import { CART_EMPTY } from '../constants/cartConstants';
-import { url } from '../actions/BackendUrl';
 function PlaceOrderScreen(props) {
 
   const cart = useSelector(state => state.cart);
@@ -85,7 +84,7 @@ function PlaceOrderScreen(props) {
                 cartItem.map(item =>
                   <li key={item.product}>
                     <div className="cart-image">
-                      <img src={`${url}${item.image}`} alt="product" />
+                      <img src={item.image} alt="product" />
                     </div>
                     <div className="cart-name">
                       <div>
@@ -99,7 +98,7 @@ function PlaceOrderScreen(props) {
                       </div>
                     </div>
                     <div className="cart-price">
-                      Rs. {item.price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
+                      ${item.price}
                     </div>
                   </li>
                 )
@@ -117,19 +116,19 @@ function PlaceOrderScreen(props) {
           </li>
           <li>
             <div>Items</div>
-            <div>Rs. {itemsPrice.toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}</div>
+            <div>${itemsPrice.toFixed(2)}</div>
           </li>
           <li>
             <div>Shipping</div>
-            <div>Rs. {shippingPrice.toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}</div>
+            <div>${shippingPrice.toFixed(2)}</div>
           </li>
           <li>
             <div>Tax</div>
-            <div>RS. {taxPrice.toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}</div>
+            <div>${taxPrice.toFixed(2)}</div>
           </li>
           <li>
             <div><strong>Order Total</strong> </div>
-            <div><strong>Rs {totalPrice.toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}</strong> </div>
+            <div><strong>${totalPrice.toFixed(2)}</strong> </div>
           </li>
            <li>
             <button className="button primary full-width" onClick={placeOrderHandler} 

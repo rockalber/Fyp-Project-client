@@ -1,3 +1,4 @@
+import { BarChartOutlined } from '@ant-design/icons';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {  listMyOrders} from '../actions/orderActions';
@@ -14,7 +15,7 @@ export default function OrderHistoryScreen(props) {
   }, [dispatch]);
  
   return (
-    <div>
+    <div className='histroy'>
       <h1>Order History</h1>
       {loading ? (
         <LoadingBox></LoadingBox>
@@ -45,15 +46,10 @@ export default function OrderHistoryScreen(props) {
                     : 'No'}
                 </td>
                 <td>
-                  <button
-                    type="button"
-                    className="small"
-                    onClick={() => {
-                      props.history.push(`/order/${order._id}`);
-                    }}
-                  >
-                    Details
-                  </button>            
+              
+                     <BarChartOutlined style={{marginRight:10}}  onClick={() => {
+                  props.history.push(`/order/${order._id}`);
+                }} />
                 </td>
               </tr>
             ))}

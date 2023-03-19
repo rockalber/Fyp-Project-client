@@ -21,6 +21,7 @@ import UserListScreen from './Screens/UserListScreen';
 import UserEditScreen from './Screens/UserEditScreen';
 import About from './components/about';
 import FAQs from './components/FAQPage';
+import Contact from './components/Contact';
 
 
 export const Routers = () => {
@@ -39,6 +40,8 @@ export const Routers = () => {
                 <Route path="/product" component={HomeScreen} />
                 <Route path="/about" component={About}/>
                 <Route path="/FAQs" component={FAQs}/>
+                <Route path="/Contact" component={Contact}/> 
+
                 <PrivateRoute
                     path="/profile"
                     component={ProfileScreen}

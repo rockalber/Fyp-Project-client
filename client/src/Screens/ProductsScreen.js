@@ -8,7 +8,7 @@ import {
 import LoadingBox from '../component/LoadingBox';
 import MessageBox from '../component/MessageBox';
 import Axios from 'axios';
-import { url } from '../actions/BackendUrl';
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 
 function ProductsScreen(props) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -89,7 +89,7 @@ function ProductsScreen(props) {
     bodyFormData.append('image', file);
     setUploading(true);
     try {
-      const { data } = await Axios.post(`${url}/api/uploads`, bodyFormData, {
+      const { data } = await Axios.post('/api/uploads', bodyFormData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${userInfo.token}`,
@@ -233,15 +233,12 @@ function ProductsScreen(props) {
                 <td>{product.category}</td>
                 <td>{product.brand}</td>
                 <td>
-                  <button className="button" onClick={() => openModal(product)}>
-                    Edit
-                  </button>{' '}
-                  <button
-                    className="button"
-                    onClick={() => deleteHandler(product)}
-                  >
-                    Delete
-                  </button>
+                <span className='icons'>
+                <EditOutlined  onClick={() => openModal(product)}/>
+                </span>
+                <span>
+                <DeleteOutlined onClick={() => deleteHandler(product)} />
+                </span>
                 </td>
               </tr>
             ))}

@@ -1,3 +1,4 @@
+import { BarChartOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import React, { useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { listOrders, deleteOrder } from '../actions/orderActions';
@@ -56,17 +57,11 @@ function OrdersScreen(props) {
                 : 'No'}
             </td>
             <td>
-              <button
-                type="button"
-                className="small"
-                onClick={() => {
+             
+                <BarChartOutlined style={{marginRight:10}}  onClick={() => {
                   props.history.push(`/order/${order._id}`);
-                }}
-              >
-                Details
-              </button>
-              {'  '}
-              <button type="button" onClick={() => deleteHandler(order)} className="button secondary">Delete</button>
+                }} />
+              <DeleteOutlined   onClick={() => deleteHandler(order)}/>
             </td>
           </tr>
         ))}

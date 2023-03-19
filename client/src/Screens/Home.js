@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/header'
-import ProductsCard from '../components/ProductsCard'
+import ProductsCard from '../components/Products'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
 function Home() {

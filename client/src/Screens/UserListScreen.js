@@ -1,3 +1,4 @@
+import { DeleteOutlined } from '@ant-design/icons';
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { listUsers, deleteUser } from '../actions/userActions';
@@ -54,14 +55,7 @@ function UserListScreen() {
                 
                 <td>{user.isAdmin ? 'YES' : 'No'}</td>
                 <td>
-                  
-                  <button
-                    type="button"
-                    className="small"
-                    onClick={() => deleteHandler(user)}
-                  >
-                    Delete
-                  </button>
+                    <DeleteOutlined  onClick={() => deleteHandler(user)}/>
                 </td>
               </tr>
             ))}
