@@ -31,8 +31,9 @@ function Footer() {
                 </Link>
               </div>
             <p>
-              We are a team of designers and developers that create high quality
-              wordpress, shopify, Opencart
+              360-Bazar is intended to provide convenience to both sellers and customers with their
+remarkable facilities. 360-bazar is providing a platform to sellers where people withsmall business can uplift their business through power of our store. Our focus is toprovide completely secure environment to our customers by providing features of
+quality assurance and live complaint
             </p>
           </div>
         </div>
@@ -60,8 +61,8 @@ function Footer() {
             <h4>Contact Us</h4>
             <li>
               <EnvironmentOutlined />
-              <span>Daska, Sialkot</span>
-              Daska - 51010
+              <span>Rawalpindi, Lalazar</span>
+              Rawalpindi - 47044
             </li>
             <li>
               <PhoneOutlined />
@@ -69,7 +70,7 @@ function Footer() {
             </li>
             <li>
               <MailOutlined />
-              <span>test@test.com</span>
+              <span>manahilrasheed00@gmail.com</span>
             </li>
           </ul>
         </div>
