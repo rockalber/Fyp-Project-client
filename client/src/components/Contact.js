@@ -75,7 +75,7 @@ const Contact = () => {
               <ul>
                 <li>
                   <EnvironmentOutlined />
-                  <span>Daska, Sialkot</span>
+                  <span>Rawalpindi, Lalazar</span>
                   Daska - 51010
                 </li>
                 <li>
